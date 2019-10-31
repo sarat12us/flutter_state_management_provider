@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 class ExpandedCircle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-      final  _scale = Provider.of<Scale>(context);
+    final _scale = Provider.of<Scale>(context);
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
@@ -17,19 +17,27 @@ class ExpandedCircle extends StatelessWidget {
         children: <Widget>[
           Container(
               child: Transform.scale(
-            scale: _scale.getScale(),
-            child: FloatingActionButton(onPressed: () {}),
-          )),
+                scale: _scale.getScale(),
+                child: FloatingActionButton(onPressed: () {}),
+              )
+          ),
+          SizedBox(height: 250.0),
           Container(
-              child: Padding(
-            padding:
-                const EdgeInsets.only(left: 100.0, right: 100.0, top: 200.0),
-            child: RaisedButton(
-              child: Text('Clieck to expand circle'),
-              onPressed: () => _scale.expand(),
-              color: Colors.red,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                RaisedButton(
+                  child: Text('Expand'),
+                  onPressed: () => _scale.expand(),
+               ),
+                SizedBox(width: 20.0),
+                RaisedButton(
+                  child: Text('Shrink'),
+                  onPressed: () => _scale.shrink(),
+                ),
+              ],
             ),
-          )),
+          ),
         ],
       ),
     );

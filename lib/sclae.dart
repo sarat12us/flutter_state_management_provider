@@ -12,4 +12,9 @@ class Scale with ChangeNotifier {
     _scale = _scale + 1.0;
     notifyListeners();
   }
+
+  void shrink() {
+    _scale = _scale - 1.0;
+    notifyListeners();
+  }
 }

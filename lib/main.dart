@@ -9,14 +9,15 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Expanded Circle',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: ChangeNotifierProvider<Scale>(
-        builder: (_) => Scale(1),
-        child: ExpandedCircle(),
-      )
+        debugShowCheckedModeBanner: false,
+        title: 'Expanded Circle',
+        theme: ThemeData(
+          primarySwatch: Colors.teal,
+        ),
+        home: ChangeNotifierProvider<Scale>(
+          builder: (_) => Scale(1),
+          child: ExpandedCircle(),
+        )
     );
   }
 }
