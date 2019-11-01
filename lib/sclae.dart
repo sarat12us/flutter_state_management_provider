@@ -9,12 +9,12 @@ class Scale with ChangeNotifier {
   setScale(double scale) => _scale = scale;
 
   void expand() {
-    _scale = _scale + 1.0;
+    if (_scale != 7.0) _scale = _scale + 1.0;
     notifyListeners();
   }
 
   void shrink() {
-    _scale = _scale - 1.0;
+    if (_scale != 1.0) _scale = _scale - 1.0;
     notifyListeners();
   }
 }

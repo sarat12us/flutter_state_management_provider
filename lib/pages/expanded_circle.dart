@@ -16,10 +16,16 @@ class ExpandedCircle extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
-              child: Transform.scale(
-                scale: _scale.getScale(),
-                child: FloatingActionButton(onPressed: () {}),
-              )
+            child: Transform.scale(
+              scale: _scale.getScale(),
+              child: FloatingActionButton(
+                onPressed: () {},
+                child: Text(
+                  'provider',
+                  style: TextStyle(fontSize: 8.0),
+                ),
+              ),
+            ),
           ),
           SizedBox(height: 250.0),
           Container(
@@ -29,7 +35,7 @@ class ExpandedCircle extends StatelessWidget {
                 RaisedButton(
                   child: Text('Expand'),
                   onPressed: () => _scale.expand(),
-               ),
+                ),
                 SizedBox(width: 20.0),
                 RaisedButton(
                   child: Text('Shrink'),
